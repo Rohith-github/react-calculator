@@ -10,7 +10,7 @@ function App() {
   let clickedEquals = false;
 
   const handleButtonClick = (event) => {
-    const value = event.target.value ;
+    const value = event.target.value;
     setInput((prevState) => {
       let prevValue = prevState[prevState.length - 1]
       const newState = [...prevState]
@@ -19,19 +19,26 @@ function App() {
         return [];
       } else if (value === '+/-') {
         if (prevValue > 0) {
-          newState[index] = -prevValue 
+          newState[index] = -prevValue
           return newState
         } else {
           newState[index] = Math.abs(prevValue)
           return newState
         }
-      }else if(value === '%') {
+      } else if (value === '%') {
         newState[index] = prevValue / 100
+        return newState
+      } else if (value === '.') {
+        if (prevValue.includes('.')) {
+          return newState;
+        }
+        newState[index] = prevValue + value
+        return newState
       } else if (REGEX.test(value) && REGEX.test(prevValue)) {
         newState[index] = prevValue + value
         return newState
-      } 
-        return newState.concat(value)
+      }
+      return newState.concat(value)
     })
   }
 
@@ -75,8 +82,8 @@ function App() {
     setDefaultValue([result])
     setInput(prevState => {
       const newState = [...prevState]
-      if(newState.length > 3){
-        const unCalculatedInputs = newState.slice(newState.length-1)
+      if (newState.length > 3) {
+        const unCalculatedInputs = newState.slice(newState.length - 1)
         return [result, ...unCalculatedInputs]
       }
       return [result]
@@ -88,17 +95,14 @@ function App() {
       clickedEquals = true;
       evaluate(+input[0], +input[2], input[1], clickedEquals)
     }
-  }, [evaluate,input])
+  }, [evaluate, input])
 
   useEffect(() => {
-      if (!clickedEquals && input.length >= 3 &&  !REGEX.test(input[input.length-1])) {
-        handleEquals(clickedEquals)
-      }
+    if (!clickedEquals && input.length >= 3 && !REGEX.test(input[input.length - 1])) {
+      handleEquals(clickedEquals)
+    }
   }, [clickedEquals, handleEquals, input])
 
-  const handleKeyPress = (event) =>{
-    console.log('Key: ',event.key)
-  }
   return (
     <div className={Styles.container}>
       <div className={Styles.calculator}>
@@ -110,7 +114,7 @@ function App() {
           <button id='+/-' className={`${Styles.button} ${Styles.operator}`} value='+/-' onClick={handleButtonClick}>+/-</button>
           <button id='%' className={`${Styles.button} ${Styles.operator}`} value='%' onClick={handleButtonClick}>%</button>
           <button id='%' className={`${Styles.button} ${Styles.operator}`} value='÷' onClick={handleButtonClick}>÷</button>
-          <button id='7' className={Styles.button} value='7' onClick={handleButtonClick} onKeyPress={handleKeyPress}>7</button>
+          <button id='7' className={Styles.button} value='7' onClick={handleButtonClick}>7</button>
           <button id='8' className={Styles.button} value='8' onClick={handleButtonClick}>8</button>
           <button id='9' className={Styles.button} value='9' onClick={handleButtonClick}>9</button>
           <button id='x' className={`${Styles.button} ${Styles.operator}`} value='x' onClick={handleButtonClick}>x</button>
