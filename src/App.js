@@ -79,14 +79,14 @@ function App() {
       default: result = 0;
     }
     clickedEquals = false
-    setDefaultValue([result])
+    setDefaultValue([result.toFixed(5)])
     setInput(prevState => {
       const newState = [...prevState]
       if (newState.length > 3) {
         const unCalculatedInputs = newState.slice(newState.length - 1)
-        return [result, ...unCalculatedInputs]
+        return [result.toFixed(5), ...unCalculatedInputs]
       }
-      return [result]
+      return [result.toFixed(5)]
     })
   }, [])
 
@@ -116,19 +116,19 @@ function App() {
           <button id='+/-' className={`${Styles.button} ${Styles.operator}`} value='+/-' onClick={handleButtonClick}>+/-</button>
           <button id='%' className={`${Styles.button} ${Styles.operator}`} value='%' onClick={handleButtonClick}>%</button>
           <button id='%' className={`${Styles.button} ${Styles.operator}`} value='÷' onClick={handleButtonClick}>÷</button>
-          <button id='7' className={Styles.button} value='7' onClick={handleButtonClick}>7</button>
-          <button id='8' className={Styles.button} value='8' onClick={handleButtonClick}>8</button>
-          <button id='9' className={Styles.button} value='9' onClick={handleButtonClick}>9</button>
+          <button id='7' className={Styles.button} value={7} onClick={handleButtonClick}>7</button>
+          <button id='8' className={Styles.button} value={8} onClick={handleButtonClick}>8</button>
+          <button id='9' className={Styles.button} value={9} onClick={handleButtonClick}>9</button>
           <button id='x' className={`${Styles.button} ${Styles.operator}`} value='x' onClick={handleButtonClick}>x</button>
-          <button id='4' className={Styles.button} value='4' onClick={handleButtonClick} >4</button>
-          <button id='5' className={Styles.button} value='5' onClick={handleButtonClick}>5</button>
-          <button id='6' className={Styles.button} value='6' onClick={handleButtonClick}>6</button>
+          <button id='4' className={Styles.button} value={4} onClick={handleButtonClick} >4</button>
+          <button id='5' className={Styles.button} value={5} onClick={handleButtonClick}>5</button>
+          <button id='6' className={Styles.button} value={6} onClick={handleButtonClick}>6</button>
           <button id='-' className={`${Styles.button} ${Styles.operator}`} value='-' onClick={handleButtonClick}>-</button>
-          <button id='1' className={Styles.button} value='1' onClick={handleButtonClick}>1</button>
-          <button id='2' className={Styles.button} value='2' onClick={handleButtonClick}>2</button>
-          <button id='3' className={Styles.button} value='3' onClick={handleButtonClick}>3</button>
+          <button id='1' className={Styles.button} value={1} onClick={handleButtonClick}>1</button>
+          <button id='2' className={Styles.button} value={2} onClick={handleButtonClick}>2</button>
+          <button id='3' className={Styles.button} value={3} onClick={handleButtonClick}>3</button>
           <button id='+' className={`${Styles.button} ${Styles.operator}`} value='+' onClick={handleButtonClick}>+</button>
-          <button id='0' className={Styles.button} value='0' onClick={handleButtonClick}>0</button>
+          <button id='0' className={Styles.button} value={0} onClick={handleButtonClick}>0</button>
           <button id='.' className={Styles.button} value='.' onClick={handleButtonClick}>.</button>
           <button id='=' className={`${Styles.button} ${Styles.result}`} value='=' onClick={handleEquals.bind(clickedEquals)}>=</button>
         </div>
