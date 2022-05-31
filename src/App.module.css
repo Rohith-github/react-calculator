@@ -1,0 +1,170 @@
+body{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.container {
+    background-color: #6993e0;
+    width: 55vw;
+    height: 70vh;
+    border-radius: 5px;
+    /* margin: auto; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 8%;
+    left: 25%;
+}
+
+.calculator {
+    width: 70%;
+    height: 85%;
+    background-color: #414143;
+    border-radius: 10px;
+    box-shadow: 25px 25px #5f80c0;
+}
+
+.displayArea {
+    height: 25%;
+    background-color: #313133;
+    box-sizing: border-box;
+    border-radius: 15px 15px 0px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.display {
+    width: 90%;
+    height: 50%;
+    background-color: #bcbec0;
+    border: #bcbec0 solid;
+    border-radius: 15px;
+    text-align: right;
+    font-size: xx-large;
+    font-weight: 600;
+    flex: 1px 1px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4,auto);
+    grid-template-rows: repeat(4,auto);
+    grid-row-gap: 13%;
+    position: relative;
+    left: 4%;
+    top: 3%;
+}
+
+.buttons button:hover,
+.buttons button:active {
+    background-color: #f58b0a;
+    border-color: #f58b0a;
+    color: white;
+    cursor: pointer;
+}
+
+.button {
+    width: 65%;
+    height: 125%;
+    font-weight: 600;
+    font-size: xx-large;
+    border-radius: 15px;
+    background-color: #f6f9f8;
+    border: #f6f9f8 solid;
+    box-sizing: border-box;
+}
+
+.result {
+    background-color: #f7941d;
+    border: #f7941d solid;
+    grid-column: 3/5;
+    width: 83%;
+}
+
+.operator {
+    color: #f7941d
+}
+
+/* smartphones, iPhone, portrait 480x320 phones */
+@media (min-width:320px) and (max-width:481px)  {
+    .container {
+        width: 80%;
+        height: 85%;
+    }
+
+    .calculator {
+        box-shadow: 15px 15px #5f80c0;
+    }
+
+    .buttons {
+        grid-row-gap: 13%;
+    }
+
+}
+
+/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+@media (min-width:481px) and (max-width:641px)  { 
+
+    .calculator {
+        height: 50%;
+        box-shadow: 12px 12px #5f80c0;
+    }
+     .displayArea {
+        height: 18%;
+    }
+    
+    .display {
+        width: 80%;
+    }
+
+    .button {
+        width: 65%;
+        height: 125%;
+        font-weight: 600;
+        font-size: x-large;
+    }
+
+    .result {
+        width: 83%;
+    }
+
+}
+
+/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+@media (min-width:641px)  and (max-width:961px){
+
+    .calculator {
+        /* height: 67%; */
+        box-shadow: 15px 15px #5f80c0;
+    }
+     .displayArea {
+        height: 20%;
+    }
+    
+    .display {
+        width: 85%;
+    }
+
+}
+
+/* tablet, landscape iPad, lo-res laptops ands desktops */ 
+@media (min-width:961px) {
+    .calculator {
+        height: 90%;
+        box-shadow: 20px 20px #5f80c0;
+    }
+
+    .button {
+        font-size: xx-large;
+    }
+}
+
+/* big landscape tablets, laptops, and desktops */
+/* @media (min-width:1025px) {  } */
+
+ /* hi-res laptops and desktops */
+/* @media (min-width:1281px) { } */
