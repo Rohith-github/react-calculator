@@ -104,6 +104,8 @@ function App() {
   }, [clickedEquals, handleEquals, input])
 
   return (
+    <>
+    <h1>REACT CALCULATOR</h1>
     <div className={Styles.container}>
       <div className={Styles.calculator}>
         <div className={Styles.displayArea}>
@@ -132,6 +134,7 @@ function App() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 
