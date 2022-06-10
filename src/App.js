@@ -42,6 +42,10 @@ function App() {
     })
   }
 
+  const isDecimal = (num) => {
+    return (num ^ 0) !== num;
+  }
+
 
   const changeDefaultValue = useCallback(value => {
     if (value.length > 0) {
@@ -79,14 +83,15 @@ function App() {
       default: result = 0;
     }
     clickedEquals = false
-    setDefaultValue([result.toFixed(5)])
+    const roundedOffResult = isDecimal(result) ? result.toFixed(5) : result
+    setDefaultValue([roundedOffResult])
     setInput(prevState => {
       const newState = [...prevState]
       if (newState.length > 3) {
         const unCalculatedInputs = newState.slice(newState.length - 1)
-        return [result.toFixed(5), ...unCalculatedInputs]
+        return [roundedOffResult, ...unCalculatedInputs]
       }
-      return [result.toFixed(5)]
+      return [roundedOffResult]
     })
   }, [])
 

@@ -23,7 +23,7 @@ body{
     height: 85%;
     background-color: #414143;
     border-radius: 10px;
-    box-shadow: 25px 25px #5f80c0;
+    box-shadow: 10px 10px #5f80c0;
 }
 
 .displayArea {
@@ -97,7 +97,7 @@ body{
     }
 
     .calculator {
-        box-shadow: 15px 15px #5f80c0;
+        box-shadow: 10px 10px #5f80c0;
     }
 
     .buttons {
@@ -111,7 +111,7 @@ body{
 
     .calculator {
         height: 50%;
-        box-shadow: 12px 12px #5f80c0;
+        box-shadow: 10px 10px #5f80c0;
     }
      .displayArea {
         height: 18%;
@@ -139,7 +139,7 @@ body{
 
     .calculator {
         /* height: 67%; */
-        box-shadow: 15px 15px #5f80c0;
+        box-shadow: 10px 10px #5f80c0;
     }
      .displayArea {
         height: 20%;
@@ -155,7 +155,7 @@ body{
 @media (min-width:961px) {
     .calculator {
         height: 90%;
-        box-shadow: 20px 20px #5f80c0;
+        box-shadow: 10px 10px #5f80c0;
     }
 
     .button {
